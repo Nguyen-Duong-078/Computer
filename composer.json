@@ -1,0 +1,19 @@
+{
+  "name": "power/galaxy-store",
+  "autoload": {
+    "psr-4": {
+      "Power\\Computer\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Nguyễn Văn Dương",
+      "email": "Nguyenduong0782004@gmail.com"
+    }
+  ],
+  "require": {
+    "eftec/bladeone": "^4.13",
+    "bramus/router": "~1.6",
+    "symfony/dotenv": "^6.4"
+  }
+}
