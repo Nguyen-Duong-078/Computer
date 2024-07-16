@@ -7,6 +7,7 @@ use Power\Computer\Controllers\Admin\DashboardController;
 use Power\Computer\Controllers\Admin\UserController;
 use Power\Computer\Controllers\Admin\CategoryController;
 use Power\Computer\Controllers\Admin\PostController;
+use Power\Computer\Controllers\Admin\ProductController;
 use Power\Computer\Controllers\Admin\StudentController;
 use Power\Computer\Controllers\Admin\TeacherController;
 use Power\Computer\Controllers\Client\HomeController;
@@ -43,6 +44,14 @@ $router->mount('/admin', function () use ($router) {
         $router->get('/{id}/delete', CatelogueController::class . '@delete');
         $router->match('GET|POST', '/{id}/update', CatelogueController::class . '@update');
         $router->match('GET|POST', '/create', CatelogueController::class . '@create');
+    });
+
+    $router->mount('/products', function () use ($router) {
+        $router->get('/', ProductController::class . '@index');
+        $router->get('/{id}/show', ProductController::class . '@show');
+        $router->get('/{id}/delete', ProductController::class . '@delete');
+        $router->match('GET|POST', '/{id}/update', ProductController::class . '@update');
+        $router->match('GET|POST', '/create', ProductController::class . '@create');
     });
 });
 

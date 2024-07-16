@@ -33,20 +33,39 @@ class Catelogue extends Model
           }
      }
 
+     private function createid($str)
+     {
+          $str = mb_strtolower($str, 'UTF-8');
+          $str = preg_replace('/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)/', 'a', $str);
+          $str = preg_replace('/(è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ)/', 'e', $str);
+          $str = preg_replace('/(ì|í|ị|ỉ|ĩ)/', 'i', $str);
+          $str = preg_replace('/(ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ)/', 'o', $str);
+          $str = preg_replace('/(ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ)/', 'u', $str);
+          $str = preg_replace('/(ỳ|ý|ỵ|ỷ|ỹ)/', 'y', $str);
+          $str = preg_replace('/(đ)/', 'd', $str);
+          $str = preg_replace('/[^a-z0-9\-]+/', '-', $str);
+          $str = trim($str, '-');
+          $str = preg_replace('/-+/', '-', $str);
+          return $str;
+     }
      public function insert($name, $is_active, $image = null)
      {
           try {
+               $id = $this->createid($name);
                $sql = "INSERT INTO 
                catelogues (name,
+                           id,
                            is_active,
                            image) 
                VALUES (:name,
+                       :id,
                        :is_active,
                        :image)";
 
                $stmt = $this->conn->prepare($sql);
 
                $stmt->bindParam(':name', $name);
+               $stmt->bindParam(':id', $id);
                $stmt->bindParam(':is_active', $is_active);
                $stmt->bindParam(':image', $image);
 

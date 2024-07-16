@@ -6,28 +6,65 @@ use Power\Computer\Commons\Model;
 
 class Product extends Model
 {
-     public function GetAll()
+     public function getAll()
      {
           try {
-               $sql = "SELECT * FROM tb_product";
-               $stmt = $this->conn->prepare($sql);
-               $stmt->execute();
-               return $stmt->fetchAll();
+               $sql = "
+                SELECT
+                    c.name                 c_name,
+                    p.id                   p_id,
+                    p.name                 p_name,
+                    p.slug                 p_slug,
+                    p.sku                  p_sku,
+                    p.img_thumbnail        p_img_thumbnail,
+                    p.price_regular        p_price_regular,
+                    p.price_sale           p_price_sale,
+                    p.description          p_description,
+                    p.content              p_content,
+                    p.view                 p_view,
+                    p.is_active            p_is_active
+                FROM products p
+                INNER JOIN catelogues c
+                    ON p.catelogue_id = c.id
+            ";
 
-          } catch (\Throwable $th) {
-               //throw $th;
+               $stmt = $this->conn->prepare($sql);
+
+               $stmt->execute();
+
+               return $stmt->fetchAll();
+          } catch (\Exception $e) {
+               echo 'ERROR: ' . $e->getMessage();
+               die;
           }
      }
 
      public function getByID($id)
      {
           try {
-               $sql = "SELECT * FROM tb_product WHERE id = :id";
+               $sql = "
+                SELECT
+                    c.name                 c_name,
+                    p.id                   p_id,
+                    p.name                 p_name,
+                    p.slug                 p_slug,
+                    p.sku                  p_sku,
+                    p.img_thumbnail        p_img_thumbnail,
+                    p.price_regular        p_price_regular,
+                    p.price_sale           p_price_sale,
+                    p.description          p_description,
+                    p.content              p_content,
+                    p.view                 p_view,
+                    p.is_active            p_is_active
+                FROM products p
+                INNER JOIN catelogues c
+                ON p.catelogue_id = c.id
+                WHERE p.id = :id
+            ";
                $stmt = $this->conn->prepare($sql);
                $stmt->bindParam(':id', $id);
                $stmt->execute();
                return $stmt->fetch();
-
           } catch (\Throwable $th) {
                //throw $th;
           }
@@ -37,14 +74,13 @@ class Product extends Model
      {
           try {
                $sql = "
-               INSERT INTO tb_product(name, price)
+               INSERT INTO products(name, price)
                VALUES(:name,
                       :price)";
                $stmt = $this->conn->prepare($sql);
                $stmt->bindParam(':name', $name);
                $stmt->bindParam(':price', $price);
                $stmt->execute();
-
           } catch (\Throwable $th) {
                //throw $th;
           }
@@ -53,12 +89,11 @@ class Product extends Model
      public function show($id)
      {
           try {
-               $sql = "SELECT * FROM tb_product WHERE id = :id";
+               $sql = "SELECT * FROM products WHERE id = :id";
                $stmt = $this->conn->prepare($sql);
                $stmt->bindParam(':id', $id);
                $stmt->execute();
                return $stmt->fetch();
-
           } catch (\Throwable $th) {
                //throw $th;
           }
@@ -68,7 +103,7 @@ class Product extends Model
      {
           try {
                $sql = "
-               UPDATE tb_product 
+               UPDATE products
                SET name = :name,
                    price = :price
                WHERE id = :id";
@@ -77,20 +112,18 @@ class Product extends Model
                $stmt->bindParam(':name', $name);
                $stmt->bindParam(':price', $price);
                $stmt->execute();
-
           } catch (\Throwable $th) {
                //throw $th;
           }
      }
 
-     public function daleteByID($id)
+     public function deleteByID($id)
      {
           try {
-               $sql = "DELETE FROM tb_product WHERE id = :id";
+               $sql = "DELETE FROM products WHERE id = :id";
                $stmt = $this->conn->prepare($sql);
                $stmt->bindParam(':id', $id);
                $stmt->execute();
-
           } catch (\Throwable $th) {
                //throw $th;
           }

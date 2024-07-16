@@ -1,16 +1,12 @@
-@extends('layouts.mater')
+@extends('layouts.master')
 @section('title')
-    Danh Mục - Thêm danh mục
+    Sản Phẩm - Thêm sản phẩm
 @endsection
 @section('content')
     <!-- Content -->
-
     <div class="container-xxl flex-grow-1 container-p-y">
-
-
-
         <h4 class="py-3 mb-4">
-            <span class="text-muted fw-light">Categorys /</span><span> Add Categorys</span>
+            <span class="text-muted fw-light">Sản Phẩm /</span><span> Add Categorys</span>
         </h4>
 
         <div class="app-ecommerce">

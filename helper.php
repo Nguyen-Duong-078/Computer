@@ -15,7 +15,7 @@ if (!function_exists('debug')) {
 if (!function_exists('Error_404')) {
     function Error_404()
     {
-        require_once 'C:\laragon\www\Ethereal\src\Views\Error\Errors.php';
+        require_once 'src/Views/Error/Error.blade.php';
         die;
     }
 }

@@ -49,7 +49,7 @@ class CatelogueController extends Controller
     {
         $data['catelogues'] = $this->catelogue->getByID($id);
         if (empty($data['catelogues'])) {
-            die(404);
+            Error_404();
         }
         return $this->renderViewAdmin(
             $this->folder . __FUNCTION__,
@@ -57,12 +57,13 @@ class CatelogueController extends Controller
         );
     }
 
+
     public function update($id)
     {
         $data['catelogues'] = $this->catelogue->getByID($id);
 
         if (empty($data['catelogues'])) {
-            die(404);
+            Error_404();
         }
 
         if (!empty($_POST)) {
@@ -110,15 +111,15 @@ class CatelogueController extends Controller
 
     public function delete($id)
     {
-        $catelogue = $this->catelogue->getByID($id);
+        $catelogues = $this->catelogue->getByID($id);
 
-        if (empty($catelogue)) {
-            die(404);
+        if (empty($data['catelogues'])) {
+            Error_404();
         }
         $this->catelogue->deleteByID($id);
         // Xóa ảnh 
-        if ($catelogue['image'] && file_exists(PATH_ROOT . $catelogue['image'])) {
-            unlink(PATH_ROOT . $catelogue['image']);
+        if ($catelogues['image'] && file_exists(PATH_ROOT . $catelogues['image'])) {
+            unlink(PATH_ROOT . $catelogues['image']);
         }
         header('Location: /admin/catelogues');
         exit();

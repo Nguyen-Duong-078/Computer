@@ -4,7 +4,7 @@
 
 
     <div class="app-brand demo ">
-        <a href="admin/" class="app-brand-link">
+        <a href="/admin/" class="app-brand-link">
             <span class="app-brand-logo demo me-1">
                 <span style="color:var(--bs-primary);">
                     <svg id="logo-39" width="50" height="40" viewBox="0 0 50 40" fill="none"
@@ -30,31 +30,34 @@
 
     <ul class="menu-inner py-1">
         <!-- Dashboards -->
+        <li class="menu-header fw-medium mt-3">
+            <span class="menu-header-text" data-i18n="Điều khiển">Điều khiển</span>
+        </li>
         <li class="menu-item">
             <a href="/../admin" class="menu-link">
                 <i class="menu-icon tf-icons mdi mdi-home-outline"></i>
-                <div data-i18n="Bảng Điểu Khiển">Bảng Điểu Khiển</div>
+                <div data-i18n="Bảng Điều Khiển">Bảng Điều Khiển</div>
             </a>
         </li>
 
         <!-- Apps & Pages -->
-        <li class="menu-header fw-medium mt-4">
-            <span class="menu-header-text" data-i18n="Apps & Pages">Apps &amp; Pages</span>
+        <li class="menu-header fw-medium mt-2">
+            <span class="menu-header-text" data-i18n="Nội dung trang">Nội dung trang</span>
         </li>
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class='menu-icon tf-icons mdi mdi mdi-folder-outline'></i>
-                <div data-i18n="Catelogues">Catelogues</div>
+                <i class='menu-icon tf-icons mdi mdi-folder-outline'></i>
+                <div data-i18n="Quản Lý Danh Mục">Quản Lý Danh Mục</div>
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="/admin/catelogues/create" class="menu-link">
-                        <div data-i18n="Create">Create</div>
+                        <div data-i18n="Thêm mới danh mục">Thêm mới danh mục</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="/admin/catelogues" class="menu-link">
-                        <div data-i18n="List">List</div>
+                        <div data-i18n="Danh sách danh mục">Danh sách danh mục</div>
                     </a>
                 </li>
             </ul>
@@ -62,18 +65,18 @@
 
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class='menu-icon tf-icons mdi mdi-cart-outline'></i>
-                <div data-i18n="Products">Products</div>
+                <i class='menu-icon tf-icons mdi mdi mdi-unity'></i>
+                <div data-i18n="Quản Lý Sản Phẩm">Quản Lý Sản Phẩm</div>
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="/admin/products/create" class="menu-link">
-                        <div data-i18n="Create">Create</div>
+                        <div data-i18n="Thêm mới sản phẩm">Thêm mới sản phẩm</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="/admin/products" class="menu-link">
-                        <div data-i18n="List">List</div>
+                        <div data-i18n="Danh sách sản phẩm">Danh sách sản phẩm</div>
                     </a>
                 </li>
                 <li class="menu-item">
@@ -84,134 +87,63 @@
             </ul>
         </li>
 
+        <li class="menu-item">
+            <a href="" class="menu-link">
+                <i class='menu-icon tf-icons mdi mdi-cart-check'></i>
+                <div data-i18n="Quản Lý Đơn Hàng">Quản Lý Đơn Hàng</div>
+            </a>
+        </li>
+
+        <li class="menu-item">
+            <a href="" class="menu-link">
+                <i class='menu-icon tf-icons mdi mdi-cash-multiple'></i>
+                <div data-i18n="Quản Lý Hóa Đơn">Quản Lý Hóa Đơn</div>
+            </a>
+        </li>
+        <li class="menu-header fw-medium mt-2">
+            <span class="menu-header-text" data-i18n="Thông báo &amp; Quyền">Thông báo &amp; Quyền</span>
+        </li>
+        <li class="menu-item">
+            <a href="" class="menu-link">
+                <i class='menu-icon tf-icons mdi mdi-bell-badge-outline'></i>
+                <div data-i18n="Thông Báo">Thông Báo</div>
+            </a>
+        </li>
 
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class='menu-icon tf-icons mdi mdi mdi-calendar-star-four-points'></i>
-                <div data-i18n="Lịch Học">Lịch Học</div>
+                <i class='menu-icon tf-icons mdi mdi-account-group'></i>
+                <div data-i18n="Thành Viên">Thành Viên</div>
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="/admin/product/create" class="menu-link">
-                        <div data-i18n="Lịch Học Lớp 10">Lịch Học Lớp 10</div>
+                    <a href="/admin/catelogues/create" class="menu-link">
+                        <div data-i18n="Thêm mới danh mục">Thêm mới danh mục</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="/admin/product" class="menu-link">
-                        <div data-i18n="Lịch Học Lớp 11">Lịch Học Lớp 11</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="/admin/product" class="menu-link">
-                        <div data-i18n="Lịch Học Lớp 12">Lịch Học Lớp 12</div>
+                    <a href="/admin/catelogues" class="menu-link">
+                        <div data-i18n="Danh sách danh mục">Danh sách danh mục</div>
                     </a>
                 </li>
             </ul>
         </li>
 
         <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class='menu-icon tf-icons mdi mdi mdi-vector-polyline-minus'></i>
-                <div data-i18n="Kết quả học lập">Kết quả học lập</div>
-            </a>
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="/admin/product/create" class="menu-link">
-                        <div data-i18n="Điểm Lớp 10">Điểm Lớp 10</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="/admin/product" class="menu-link">
-                        <div data-i18n="Điểm Lớp 11">Điểm Lớp 11</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="/admin/product" class="menu-link">
-                        <div data-i18n="Điểm Lớp 12">Điểm Lớp 12</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-
-        <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class='menu-icon tf-icons mdi mdi mdi-account-cash-outline'></i>
-                <div data-i18n="Học Phí">Học Phí</div>
-            </a>
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="/admin/product/create" class="menu-link">
-                        <div data-i18n="Học Phí Lớp 10">Học Phí Lớp 10</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="/admin/product" class="menu-link">
-                        <div data-i18n="Học Phí Lớp 11">Học Phí Lớp 11</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="/admin/product" class="menu-link">
-                        <div data-i18n="Học Phí Lớp 12">Học Phí Lớp 12</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-
-        <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class='menu-icon tf-icons mdi mdi mdi-bell-badge-outline'></i>
-                <div data-i18n="Notification">Notification</div>
-            </a>
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="/admin/posts/create" class="menu-link">
-                        <div data-i18n="Creat">Create</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="/admin/posts" class="menu-link">
-                        <div data-i18n="List">List</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-
-        <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class='menu-icon tf-icons mdi mdi-account-outline'></i>
+            <a href="" class="menu-link">
+                <i class='menu-icon tf-icons mdi mdi-account-lock-open-outline'></i>
                 <div data-i18n="Quyền Truy Cập">Quyền Truy Cập</div>
             </a>
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="/admin/users/create" class="menu-link">
-                        <div data-i18n="Giáo Viên">Giáo Viên</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="/admin/users" class="menu-link">
-                        <div data-i18n="Sinh Viên">Sinh Viên</div>
-                    </a>
-                </li>
-            </ul>
         </li>
 
+        <li class="menu-header fw-medium mt-2">
+            <span class="menu-header-text" data-i18n="Thống kê">Thống kê</span>
+        </li>
         <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <a href="" class="menu-link">
                 <i class='menu-icon tf-icons mdi mdi-chart-bar'></i>
                 <div data-i18n="Thống Kê">Thống Kê</div>
             </a>
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="/admin/users/create" class="menu-link">
-                        <div data-i18n="Thống Kê Học Sinh">Thống Kê Học Sinh</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="/admin/users" class="menu-link">
-                        <div data-i18n="Thống Kê Giáo Viên">Thống Kê Giáo Viên</div>
-                    </a>
-                </li>
-            </ul>
         </li>
 
     </ul>

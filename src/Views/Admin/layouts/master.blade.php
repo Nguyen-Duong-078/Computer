@@ -61,13 +61,6 @@
     $account['accounts'] = $_SESSION['user'];
     extract($account);
     ?>
-    <!-- Google Tag Manager (noscript) ) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DDHKGP" height="0" width="0"
-            style="display: none; visibility: hidden">
-        </iframe>
-    </noscript>
-    <!-- End Google Tag Manager -->
 
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar  ">

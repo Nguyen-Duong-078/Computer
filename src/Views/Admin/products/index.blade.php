@@ -1,102 +1,111 @@
-@extends('layouts.mater')
+@extends('layouts.master')
 
 @section('title')
-    Sản Phẩm
+    Products
 @endsection
 @section('content')
+    <!-- Content -->
+
     <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="py-3 mb-4">
-            <span class="text-muted fw-light">Categorys /</span><span> List</span>
+        <h4>
+            <span class="text-muted fw-light">Products /</span> Product
+            List
         </h4>
+        <div class="card-header d-flex justify-content-end align-items-center mb-3">
+            <a class="btn btn-primary" href="catelogues/create"><i class="mdi mdi-plus me-0 me-sm-1"></i>Add Product</a>
+        </div>
         <div class="card">
-            <div class="card-header">
-                <h5 class="card-title">Danh sách danh mục</h5>
-                <div class="d-flex justify-content-between align-items-center row py-3 gap-3 gap-md-0">
-                    <div class="col-md-4 product_status"></div>
-                    <div class="col-md-4 product_category"></div>
-                    <div class="col-md-4 product_stock"></div>
-                </div>
-            </div>
-            <div class="card-datatable table-responsive">
-                <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
-                    <div class="card-header d-flex border-top rounded-0 flex-wrap py-md-2 justify-content-between ">
-                        <div class="me-5 ms-n2">
-                            <div id="DataTables_Table_0_filter" class="dataTables_filter">
-                                <label><input type="search" class="form-control" placeholder="Tìm Kiếm"
-                                        aria-controls="DataTables_Table_0"></label>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-start justify-content-md-end align-items-baseline">
-                            <div
-                                class="dt-action-buttons d-flex align-items-start align-items-md-center justify-content-sm-center mb-3 mb-sm-0 gap-3 pt-0">
-                                <div class="dt-buttons d-flex flex-wrap">
-                                    <button class="dt-button add-new btn btn-primary waves-effect waves-light"
-                                        tabindex="0" aria-controls="DataTables_Table_0" type="button">
-                                        <span>
-
-                                            <a href="categorys/create" class="menu-link" style="color: rgb(255, 255, 255)">
-                                                <i class="mdi mdi-plus me-0 me-sm-1"></i>Thêm Danh
-                                                Mục
-                                            </a>
-                                        </span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <table class="datatables-products table dataTable no-footer dtr-column mx-auto" id="DataTables_Table_0"
-                        aria-describedby="DataTables_Table_0_info">
-                        <thead class="table-light">
+            <div class="card-body">
+                <table id="example" class=" table table-bordered dt-responsive nowrap table-striped align-middle"
+                    style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Catelogue</th>
+                            <th>Name</th>
+                            <th>img_thumbnail</th>
+                            <th>content</th>
+                            <th>Slug</th>
+                            <th>Sku</th>
+                            <th>price_regular</th>
+                            <th>price_sale</th>
+                            <th>description</th>
+                            <th>view</th>
+                            <th>Active</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($products as $item)
                             <tr>
-                                <th class="control sorting_disabled dtr-hidden" rowspan="1" colspan="1"
-                                    style="width: 19.45px; display: none;" aria-label="">
-                                </th>
-                                <th class="sorting_disabled dt-checkboxes-cell dt-checkboxes-select-all" rowspan="1"
-                                    colspan="1" style="width: 19.45px;" data-col="1" aria-label=""><input
-                                        type="checkbox" class="form-check-input">
-                                </th>
-                                <th class="sorting sorting_asc" tabindex="0" aria-controls="DataTables_Table_0"
-                                    rowspan="1" colspan="1" style="width: 120.15px;" aria-sort="ascending"
-                                    aria-label="product: activate to sort column descending">ID
-                                </th>
-                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                                    colspan="1" style="width: 130.917px;"
-                                    aria-label="category: activate to sort column ascending">NAME
-                                </th>
-                                <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 88.1px;"
-                                    aria-label="stock">Control
-                                </th>
-
+                                <td>{{ $item['p_id'] }}</td>
+                                <td>{{ $item['c_name'] }}</td>
+                                <td>{{ $item['p_name'] }}</td>
+                                <td class="text-center">
+                                    <img src="{{ $item['p_img_thumbnail'] }}" alt="" width="60px" height="60px"
+                                        class="rounded-3">
+                                </td>
+                                <td>{{ $item['p_content'] }}</td>
+                                <td>{{ $item['p_slug'] }}</td>
+                                <td>{{ $item['p_sku'] }}</td>
+                                <td>{{ $item['p_price_regular'] }}</td>
+                                <td>{{ $item['p_price_sale'] }}</td>
+                                <td>{{ $item['p_description'] }}</td>
+                                <td>{{ $item['p_view'] }}</td>
+                                <td>
+                                    {!! $item['p_is_active']
+                                        ? '<span class="badge bg-success">YES</span>'
+                                        : '<span class="badge bg-danger">NO</span>' !!}
+                                </td>
+                                <td>
+                                    <a data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Show"
+                                        class="btn btn-info btn-sm" href="products/{{ $item['p_id'] }}/show"><i
+                                            class="mdi mdi-eye"></i></a>
+                                    <a data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Update"
+                                        class="btn btn-warning btn-sm" href="products/{{ $item['p_id'] }}/update"><i
+                                            class="mdi mdi-pencil"></i></a>
+                                    <a data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Delete"
+                                        class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to')"
+                                        href="products/{{ $item['p_id'] }}/delete"><i
+                                            class="mdi mdi-delete-circle"></i></a>
+                                </td>
                             </tr>
-                            @foreach ($categorys as $category)
-                                <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td> {{ $category['id'] }} </td>
-                                    <td> {{ $category['name'] }} </td>
-                                    <td>
-                                        <a href="/admin/categorys/{{ $category['id'] }}/update" class="btn btn-warning">
-                                            Update
-                                        </a>
-                                        <a href="/admin/categorys/{{ $category['id'] }}/show" class="btn btn-info">
-                                            Show
-                                        </a>
-                                        <a onclick="return confirm('Bạn có chắc muốn xóa không?')"
-                                            href="/admin/categorys/{{ $category['id'] }}/delete" class="btn btn-danger">
-                                            Delete
-                                        </a>
+                        @endforeach
 
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </thead>
-                        <tbody>
-                            <tr class="odd">
-
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
+    <!-- / Content -->
+@endsection
+@section('style-libs')
+    <!--datatable css-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" />
+    <!--datatable responsive css-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
+@endsection
+@section('script-libs')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--datatable js-->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+
+    <script>
+        new DataTable("#example", {
+            order: [
+                [0, 'desc']
+            ]
+        });
+    </script>
 @endsection

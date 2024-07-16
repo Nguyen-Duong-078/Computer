@@ -1,209 +1,124 @@
-<footer>
-    <div class="footer__area footer-bg">
-        <div class="footer__top pt-80 pb-40">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-7 col-lg-12">
-                        <div class="footer__top-left">
-                            <div class="row">
-                                <div class="col-xl-5 col-lg-6 col-md-6 col-sm-6">
-                                    <div class="footer__widget">
-                                        <div class="footer__widget-title mb-45">
-                                            <div class="footer__logo">
-                                                <a href="index.html"><img src="assets/client/img/logo/logo-white.png"
-                                                        alt=""></a>
-                                            </div>
-                                        </div>
-                                        <div class="footer__widget-content">
-                                            <div class="footer__hotline d-flex align-items-center mb-30">
-                                                <div class="icon mr-15">
-                                                    <i class="fal fa-headset"></i>
-                                                </div>
-                                                <div class="text">
-                                                    <h4>Hotline Free 24/24:</h4>
-                                                    <span>(+100) 123 456 7890</span>
-                                                </div>
-                                            </div>
-                                            <div class="footer__info">
-                                                <ul>
-                                                    <li>
-                                                        <span>Add: <a target="_blank"
-                                                                href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">Walls
-                                                                Street 68, Mahattan, New York, USA</a>
-                                                        </span>
-                                                    </li>
-                                                    <li><span>Email: <a
-                                                                href="https://wphix.com/cdn-cgi/l/email-protection#87eee9e1e8c7f3efe2e5f2e2f4ecfea9e4e8ea"><span
-                                                                    class="__cf_email__"
-                                                                    data-cfemail="a1c8cfc7cee1d5c9c4c3d4c4d2cad88fc2cecc">[email&#160;protected]</span></a>
-                                                        </span></li>
-                                                    <li><span>Fax: <a href="tel:123-456-7890">(+100) 123 456 7890</a> -
-                                                            <a href="tel:-100-123-456-7891">(+100) 123 456 7891</a>
-                                                        </span></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-7 col-lg-6 col-md-6 col-sm-6">
-                                    <div class="row">
-                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                                            <div class="footer__widget">
-                                                <div class="footer__widget-title">
-                                                    <h4>Information</h4>
-                                                </div>
-                                                <div class="footer__widget-content">
-                                                    <div class="footer__link">
-                                                        <ul>
-                                                            <li><a href="#"> Custom Service </a></li>
-                                                            <li><a href="#">F.A.Q.’s</a></li>
-                                                            <li><a href="#">Ordering Tracking</a></li>
-                                                            <li><a href="#"> Contacts</a></li>
-                                                            <li><a href="#">Events</a></li>
-                                                            <li><a href="#">Popular</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                                            <div class="footer__widget">
-                                                <div class="footer__widget-title">
-                                                    <h4>Our Services</h4>
-                                                </div>
-                                                <div class="footer__widget-content">
-                                                    <div class="footer__link">
-                                                        <ul>
-                                                            <li><a href="#">Sitemap</a></li>
-                                                            <li><a href="#">Privacy Policy</a></li>
-                                                            <li><a href="#">Your Account</a></li>
-                                                            <li><a href="#">Advanced Search</a></li>
-                                                            <li><a href="#">Terms & Condition</a></li>
-                                                            <li><a href="#"> Contact Us</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-5 col-lg-12">
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                                <div class="footer__widget">
-                                    <div class="footer__widget-title">
-                                        <h4>My Account</h4>
-                                    </div>
-                                    <div class="footer__widget-content">
-                                        <div class="footer__link">
-                                            <ul>
-                                                <li><a href="#"> About us </a></li>
-                                                <li><a href="#">Delivery Information</a></li>
-                                                <li><a href="#">Privacy Policy</a></li>
-                                                <li><a href="#">Discount</a></li>
-                                                <li><a href="#">Custom Service</a></li>
-                                                <li><a href="#">Terms & Condition</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                                <div class="footer__widget">
-                                    <div class="footer__widget-title">
-                                        <h4>Payment & Shipping</h4>
-                                    </div>
-                                    <div class="footer__widget-content">
-                                        <div class="footer__link">
-                                            <ul>
-                                                <li><a href="#">Terms Of Use</a></li>
-                                                <li><a href="#">Payment Methods</a></li>
-                                                <li><a href="#">Shipping Guide</a></li>
-                                                <li><a href="#">Locations We Ship To</a></li>
-                                                <li><a href="#">Estimated Delivery Time</a></li>
-                                                <li><a href="#">Express</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer__bottom pt-60 pb-60">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="footer__links text-center">
-                            <p>
-                                <a href="#">Air Conditioners</a>
-                                <a href="#">Audios & Theaters</a>
-                                <a href="#">Car Electronics</a>
-                                <a href="#">Office Electronics</a>
-                                <a href="#">TV Televisions</a>
-                                <a href="#">Washing Machines</a>
-                            </p>
-                            <p>
-                                <a href="#">Cookware</a>
-                                <a href="#">Decoration</a>
-                                <a href="#">Furniture </a>
-                                <a href="#">Garden Tools</a>
-                                <a href="#">Garden Equipments</a>
-                                <a href="#">Powers And Hand Tools </a>
-                                <a href="#">Utensil & Gadget </a>
-                                <a href="#">Printers</a>
-                                <a href="#">Projectors</a>
-                                <a href="#">Scanners</a>
-                                <a href="#">Store</a>
-                                <a href="#">Business</a>
-                            </p>
-                            <p>
-                                <a href="#">4K Ultra</a>
-                                <a href="#"> HD TVs </a>
-                                <a href="#">LED TVs</a>
-                                <a href="#">OLED TVs</a>
-                                <a href="#">Desktop</a>
-                                <a href="#">PC</a>
-                                <a href="#">Laptop</a>
-                                <a href="#">Smartphones</a>
-                                <a href="#">Tablet</a>
-                                <a href="#">Game Controller</a>
-                                <a href="#">Audio & Video</a>
-                                <a href="#"> Wireless Speaker</a>
-                                <a href="#">Drone</a>
-                            </p>
-                        </div>
-                        <div class="footer__download text-center">
-                            <h4>Download The App - Get 30% Sale Coupon</h4>
-                            <a href="#" class="m-img"><img src="assets/client/img/icon/app-store.jpg"
-                                    alt=""></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer__copyright pt-30 pb-35 footer-bottom-bg">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="footer__copyright-text">
-                            <p>Copyright © <a href="index.html">Topico.</a> All Rights Reserved. <a
-                                    href="#">ThemePure.</a></p>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="footer__payment f-right">
-                            <a href="#" class="m-img"><img src="assets/client/img/icon/payment.png"
-                                    alt=""></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+ <!-- Footer Area Start -->
+ <div class="footer-area">
+     <div class="footer-container">
+         <div class="footer-top">
+             <div class="container">
+                 <div class="row">
+                     <!-- Start single blog -->
+                     <div class="col-md-6 col-lg-3 mb-md-30px mb-lm-30px">
+                         <div class="single-wedge">
+                             <div class="footer-logo">
+                                 <a href="index.html"><img src="assets/images/logo/footer-logo.png" alt=""></a>
+                             </div>
+                             <p class="about-text">Lorem ipsum dolor sit amet consl adipisi elit, sed do
+                                 eiusmod templ incididunt ut labore
+                             </p>
+                             <ul class="link-follow">
+                                 <li>
+                                     <a class="m-0" title="Twitter" target="_blank" rel="noopener noreferrer"
+                                         href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                 </li>
+                                 <li>
+                                     <a title="Tumblr" target="_blank" rel="noopener noreferrer" href="#"><i
+                                             class="fa fa-tumblr" aria-hidden="true"></i>
+                                     </a>
+                                 </li>
+                                 <li>
+                                     <a title="Facebook" target="_blank" rel="noopener noreferrer" href="#"><i
+                                             class="fa fa-twitter" aria-hidden="true"></i>
+                                     </a>
+                                 </li>
+                                 <li>
+                                     <a title="Instagram" target="_blank" rel="noopener noreferrer" href="#"><i
+                                             class="fa fa-instagram" aria-hidden="true"></i>
+                                     </a>
+                                 </li>
+                             </ul>
+                         </div>
+                     </div>
+                     <!-- End single blog -->
+                     <!-- Start single blog -->
+                     <div class="col-md-6 col-lg-3 col-sm-6 mb-lm-30px pl-lg-60px">
+                         <div class="single-wedge">
+                             <h4 class="footer-herading">Services</h4>
+                             <div class="footer-links">
+                                 <div class="footer-row">
+                                     <ul class="align-items-center">
+                                         <li class="li"><a class="single-link" href="my-account.html">My Account</a>
+                                         </li>
+                                         <li class="li"><a class="single-link" href="contact.html">Contact</a></li>
+                                         <li class="li"><a class="single-link" href="cart.html">Shopping cart</a>
+                                         </li>
+                                         <li class="li"><a class="single-link"
+                                                 href="shop-left-sidebar.html">Shop</a></li>
+                                         <li class="li"><a class="single-link" href="login.html">Services Login</a>
+                                         </li>
+                                     </ul>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                     <!-- End single blog -->
+                     <!-- Start single blog -->
+                     <div class="col-md-6 col-lg-3 col-sm-6 mb-lm-30px pl-lg-40px">
+                         <div class="single-wedge">
+                             <h4 class="footer-herading">My Account</h4>
+                             <div class="footer-links">
+                                 <div class="footer-row">
+                                     <ul class="align-items-center">
+                                         <li class="li"><a class="single-link" href="my-account.html">My Account</a>
+                                         </li>
+                                         <li class="li"><a class="single-link" href="contact.html">Contact</a></li>
+                                         <li class="li"><a class="single-link" href="cart.html">Shopping cart</a>
+                                         </li>
+                                         <li class="li"><a class="single-link"
+                                                 href="shop-left-sidebar.html">Shop</a></li>
+                                         <li class="li"><a class="single-link" href="login.html">Services Login</a>
+                                         </li>
+                                     </ul>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                     <!-- End single blog -->
+                     <!-- Start single blog -->
+                     <div class="col-md-6 col-lg-3 col-sm-12">
+                         <div class="single-wedge">
+                             <h4 class="footer-herading">Contact Info</h4>
+                             <div class="footer-links">
+                                 <!-- News letter area -->
+                                 <p class="address">Address: Your Address Goes Here.</p>
+                                 <p class="phone">Phone/Fax:<a href="tel:0123456789"> 0123456789</a></p>
+                                 <p class="mail">Email:<a href="mailto:demo@example.com">
+                                         demo@example.com</a></p>
+                                 <p class="mail"><a href="https://demo@example.com/"> demo@example.com</a>
+                                 </p>
+                                 <!-- News letter area  End -->
+                             </div>
+                         </div>
+                     </div>
+                     <!-- End single blog -->
+                 </div>
+             </div>
+         </div>
+         <div class="footer-bottom">
+             <div class="container">
+                 <div class="line-shape-top line-height-1">
+                     <div class="row flex-md-row-reverse align-items-center">
+                         <div class="col-md-6 text-center text-md-end">
+                             <div class="payment-mth"><a href="#"><img class="img img-fluid"
+                                         src="assets/images/icons/payment.png" alt="payment-image"></a></div>
+                         </div>
+                         <div class="col-md-6 text-center text-md-start">
+                             <p class="copy-text"> © 2022 <strong>Hmart</strong> Made With <i class="fa fa-heart"
+                                     aria-hidden="true"></i> By <a class="company-name"
+                                     href="https://themeforest.net/user/codecarnival/portfolio">
+                                     <strong> Codecarnival </strong></a>.</p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+ <!-- Footer Area End -->

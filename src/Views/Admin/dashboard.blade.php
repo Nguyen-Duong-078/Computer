@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Trang Chủ | Trường THPT Như Thanh 2
+    Trang Chủ
 @endsection
 
 @section('content')

@@ -1,4 +1,4 @@
-@extends('layouts.mater')
+@extends('layouts.master')
 
 @section('title')
     Cập Nhật - {{ $category['name'] }}
