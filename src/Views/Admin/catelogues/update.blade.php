@@ -12,7 +12,7 @@
 
 
         <h4 class="py-3 mb-4">
-            <span class="text-muted fw-light">Catelogues /</span><span> Update Catelogue</span>
+            <span class="text-muted fw-light">Quản lý danh mục /</span><span> Cập nhật danh mục</span>
         </h4>
 
         <div class="app-ecommerce">
@@ -22,11 +22,11 @@
                     class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3">
 
                     <div class="d-flex flex-column justify-content-center">
-                        <h4 class="mb-1 mt-3">Update a Catelogue</h4>
+                        <h4 class="mb-1 mt-3">Thông tin danh mục</h4>
                     </div>
                     <div class="d-flex align-content-center flex-wrap gap-3">
-                        <a href="/admin/catelogues/" class="btn btn-info">back</a>
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <a href="/admin/catelogues/" class="btn btn-info">Quay lại</a>
+                        <button type="submit" class="btn btn-primary">Cập nhật</button>
                     </div>
                 </div>
 

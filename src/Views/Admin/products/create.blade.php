@@ -1,312 +1,258 @@
 @extends('layouts.master')
 @section('title')
-    Sản Phẩm - Thêm sản phẩm
+    Sản Phẩm - Thêm mới
 @endsection
 @section('content')
     <!-- Content -->
     <div class="container-xxl flex-grow-1 container-p-y">
         <h4 class="py-3 mb-4">
-            <span class="text-muted fw-light">Sản Phẩm /</span><span> Add Categorys</span>
+            <span class="text-muted fw-light">Sản phẩm /</span><span> Thêm mới</span>
         </h4>
 
         <div class="app-ecommerce">
-            <form action="" method="post">
+            <form action="/admin/products/create" method="post" enctype="multipart/form-data">
                 <!-- Add Product -->
                 <div
                     class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3">
-
                     <div class="d-flex flex-column justify-content-center">
-                        <h4 class="mb-1 mt-3">Add a new Categorys</h4>
+                        <h4 class="mb-1 mt-3">Thêm một sản phẩm mới</h4>
+                        <p>Các đơn hàng được đặt trên cửa hàng của bạn</p>
                     </div>
                     <div class="d-flex align-content-center flex-wrap gap-3">
-                        <button type="reset" class="btn btn-outline-secondary">Loại Bỏ</button>
-                        <button type="submit" class="btn btn-primary">Thêm Danh Mục</button>
+                        <button type="reset" class="btn btn-outline-secondary">Nhập Lại</button>
+                        <button type="submit" name="submit" class="btn btn-primary">
+                            Xác nhận
+                        </button>
                     </div>
                 </div>
 
                 <div class="row">
-
                     <!-- First column-->
                     <div class="col-12 col-lg-8">
                         <!-- Product Information -->
                         <div class="card mb-4">
                             <div class="card-header">
-                                <h5 class="card-tile mb-0">Thông tin danh mục</h5>
+                                <h5 class="card-tile mb-0">Thông tin sản phẩm</h5>
                             </div>
                             <div class="card-body">
                                 <div class="form-floating form-floating-outline mb-4">
                                     <input type="text" class="form-control" id="ecommerce-product-name"
-                                        placeholder="Tên danh mục" name="name" aria-label="Tên danh mục" required
-                                        autofocus>
-                                    <label for="ecommerce-product-name">Tên danh mục</label>
+                                        placeholder="Tên sản phẩm" name="name" aria-label="Product title" autofocus />
+                                    <label for="ecommerce-product-name">Tên sản phẩm</label>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <div class="form-floating form-floating-outline">
+                                            <input type="number" class="form-control" id="ecommerce-product-sku"
+                                                placeholder="00000" name="sku" aria-label="Product sku" autofocus />
+                                            <label for="ecommerce-product-sku">Mã sản phẩm</label>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-floating form-floating-outline">
+                                            <input type="file" class="form-control" placeholder="Image"
+                                                name="img_thumbnail" autofocus>
+                                            <label for="ecommerce-product-name">Ảnh đại diện</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-floating form-floating-outline mb-4">
+                                    <input type="file" class="form-control" name="images[]" autofocus multiple />
+                                    <label for="ecommerce-product-description">Thư viện ảnh</label>
+                                </div>
+                                <div class="form-floating form-floating-outline mb-4">
+                                    <input type="text" class="form-control" id="ecommerce-product-description"
+                                        placeholder="Mô tả" name="description" aria-label="Product description" autofocus />
+                                    <label for="ecommerce-product-description">Mô tả</label>
+                                </div>
+                                <!-- Content -->
+                                <div>
+                                    <label class="form-label">Nội dung
+                                        <span class="text-muted">(Không bắt buộc)</span></label>
+                                    <textarea class="form-control" name="content" id="content"></textarea>
                                 </div>
                             </div>
                         </div>
                         <!-- /Product Information -->
-                        <!-- Inventory -->
+                        <!-- Variants -->
                         <div class="card mb-4">
                             <div class="card-header">
-                                <h5 class="card-title mb-0">Inventory</h5>
+                                <h5 class="card-title mb-0">Các biến thể</h5>
                             </div>
                             <div class="card-body">
-                                <div class="row">
-                                    <!-- Navigation -->
-                                    <div class="col-12 col-md-4 mx-auto card-separator">
-                                        <div class="d-flex justify-content-between flex-column mb-3 mb-md-0 pe-md-3">
-                                            <ul class="nav nav-align-left nav-pills flex-column">
-                                                <li class="nav-item">
-                                                    <button class="nav-link active" data-bs-toggle="tab"
-                                                        data-bs-target="#restock">
-                                                        <i class="mdi mdi-cube-outline me-2"></i>
-                                                        <span class="align-middle">Restock</span>
-                                                    </button>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <button class="nav-link" data-bs-toggle="tab"
-                                                        data-bs-target="#shipping">
-                                                        <i class="mdi mdi-car-estate me-2"></i>
-                                                        <span class="align-middle">Shipping</span>
-                                                    </button>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <button class="nav-link" data-bs-toggle="tab"
-                                                        data-bs-target="#global-delivery">
-                                                        <i class="mdi mdi-web me-2"></i>
-                                                        <span class="align-middle">Global
-                                                            Delivery</span>
-                                                    </button>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <button class="nav-link" data-bs-toggle="tab"
-                                                        data-bs-target="#attributes">
-                                                        <i class="mdi mdi-link-variant me-2"></i>
-                                                        <span class="align-middle">Attributes</span>
-                                                    </button>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <button class="nav-link" data-bs-toggle="tab"
-                                                        data-bs-target="#advanced">
-                                                        <i class="mdi mdi-lock me-2"></i>
-                                                        <span class="align-middle">Advanced</span>
-                                                    </button>
-                                                </li>
-                                            </ul>
+                                <div id="multi">
+                                    <div class="row mb-3 mb-sm-0 itemst">
+                                        <div class="mb-3 col-sm-4">
+                                            <div class="form-floating form-floating-outline">
+                                                <select name="variant[0][colors]" id="select2Basic"
+                                                    class="select2 form-select" data-placeholder="Tùy chọn"
+                                                    data-allow-clear="true">
+                                                    <option value="">Tùy chọn</option>
+                                                    @foreach ($colors as $color)
+                                                        <option value="{{ $color['id'] }}">{{ $color['name'] }}</option>
+                                                    @endforeach
+                                                </select>
+                                                <label for="select2Basic">Màu Sắc</label>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 col-sm-4">
+                                            <div class="form-floating form-floating-outline">
+                                                <input type="number" name="variant[0][quantities]" id="form-repeater-1-2"
+                                                    class="form-control" placeholder="Số Lượng" />
+                                                <label for="form-repeater-1-2">Số Lượng</label>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 col-sm-4">
+                                            <div class="form-floating form-floating-outline">
+                                                <input type="file" name="variant[0][variant_images]"
+                                                    id="form-repeater-1-2" class="form-control"
+                                                    placeholder="Ảnh sản phẩm" />
+                                                <label for="form-repeater-1-2">Ảnh sản phẩm</label>
+                                            </div>
                                         </div>
                                     </div>
-                                    <!-- /Navigation -->
-                                    <!-- Options -->
-                                    <div class="col-12 col-md-8 pt-4 pt-md-0">
-                                        <div class="tab-content p-0 pe-xl-0 ps-md-3">
-                                            <!-- Restock Tab -->
-                                            <div class="tab-pane fade show active" id="restock" role="tabpanel">
-                                                <h6 class="text-body">Options</h6>
-                                                <div class="row mb-3 g-3">
-                                                    <div class="col-12 col-sm-8 col-lg-12 col-xxl-8">
-                                                        <div class="form-floating form-floating-outline">
-                                                            <input type="number" class="form-control"
-                                                                id="ecommerce-product-stock" placeholder="Quantity"
-                                                                name="quantity" aria-label="Quantity">
-                                                            <label for="ecommerce-product-stock">Add to
-                                                                Stock</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6 col-sm-4 d-grid col-lg-6 col-xxl-4">
-                                                        <button class="btn btn-primary btn-lg"><i
-                                                                class='mdi mdi-check me-2'></i>Confirm</button>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <p class="text-heading mb-2">Product in stock now:
-                                                        <span class="ps-1">54</span>
-                                                    </p>
-                                                    <p class="text-heading mb-2">Product in transit:
-                                                        <span class="ps-1">390</span>
-                                                    </p>
-                                                    <p class="text-heading mb-2">Last time restocked:
-                                                        <span class="ps-1">24th June, 2023</span>
-                                                    </p>
-                                                    <p class="text-heading mb-2">Total stock over
-                                                        lifetime:
-                                                        <span class="ps-1">2430</span>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <!-- Shipping Tab -->
-                                            <div class="tab-pane fade" id="shipping" role="tabpanel">
-                                                <h6 class="text-body">Shipping Type</h6>
-                                                <div>
-                                                    <div class="form-check mb-3">
-                                                        <input class="form-check-input" type="radio" name="shippingType"
-                                                            id="seller">
-                                                        <label class="form-check-label" for="seller">
-                                                            <span class="h6">Fulfilled by
-                                                                Seller</span><br>
-                                                            <small class="text-muted">You'll be
-                                                                responsible
-                                                                for product delivery.<br>
-                                                                Any damage or delay during shipping may
-                                                                cost
-                                                                you a Damage fee.</small>
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check mb-5">
-                                                        <input class="form-check-input" type="radio"
-                                                            name="shippingType" id="companyName" checked>
-                                                        <label class="form-check-label" for="companyName">
-                                                            <span class="h6">Fulfilled by Company
-                                                                name
-                                                                &nbsp;<span
-                                                                    class="badge rounded-pill badge-warning bg-label-warning fs-tiny py-1">RECOMMENDED</span></span><br>
-                                                            <small class="text-muted">Your product, Our
-                                                                responsibility.<br>
-                                                                For a measly fee, we will handle the
-                                                                delivery process for you.</small>
-                                                        </label>
-                                                    </div>
-                                                    <p class="mb-0">See our <a href="javascript:void(0);">Delivery terms
-                                                            and
-                                                            conditions</a> for details</p>
-                                                </div>
-                                            </div>
-                                            <!-- Global Delivery Tab -->
-                                            <div class="tab-pane fade" id="global-delivery" role="tabpanel">
-                                                <h6 class="text-body">Global Delivery</h6>
-                                                <!-- Worldwide delivery -->
-                                                <div class="form-check mb-3">
-                                                    <input class="form-check-input" type="radio" name="globalDel"
-                                                        id="worldwide">
-                                                    <label class="form-check-label" for="worldwide">
-                                                        <span class="h6">Worldwide
-                                                            delivery</span><br>
-                                                        <small class="text-muted">Only available with
-                                                            Shipping method:
-                                                            <a href="javascript:void(0);">Fulfilled by
-                                                                Company name</a></small>
-                                                    </label>
-                                                </div>
-                                                <!-- Global delivery -->
-                                                <div class="form-check mb-3">
-                                                    <input class="form-check-input" type="radio" name="globalDel"
-                                                        checked>
-                                                    <label class="form-check-label w-75 pe-5 mb-2" for="country-selected">
-                                                        <span class="h6">Selected Countries</span>
-                                                    </label>
-                                                    <div class="form-floating form-floating-outline">
-                                                        <input type="text" class="form-control"
-                                                            placeholder="Type Country name" id="country-selected">
-                                                        <label for="ecommerce-product-name">Countries</label>
-                                                    </div>
-                                                </div>
-                                                <!-- Local delivery -->
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="globalDel"
-                                                        id="local">
-                                                    <label class="form-check-label" for="local">
-                                                        <span class="h6">Local delivery</span><br>
-                                                        <small class="text-muted">Deliver to your
-                                                            country
-                                                            of residence :
-                                                            <a href="javascript:void(0);">Change
-                                                                profile
-                                                                address</a></small>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <!-- Attributes Tab -->
-                                            <div class="tab-pane fade" id="attributes" role="tabpanel">
-                                                <h6 class="text-body">Attributes</h6>
-                                                <div>
-                                                    <!-- Fragile Product -->
-                                                    <div class="form-check mb-3">
-                                                        <input class="form-check-input" type="checkbox" value="fragile"
-                                                            id="fragile">
-                                                        <label class="form-check-label" for="fragile">
-                                                            <span class="h6">Fragile Product</span>
-                                                        </label>
-                                                    </div>
-                                                    <!-- Biodegradable -->
-                                                    <div class="form-check mb-3">
-                                                        <input class="form-check-input" type="checkbox"
-                                                            value="biodegradable" id="biodegradable">
-                                                        <label class="form-check-label" for="biodegradable">
-                                                            <span class="h6">Biodegradable</span>
-                                                        </label>
-                                                    </div>
-                                                    <!-- Frozen Product -->
-                                                    <div class="form-check mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="frozen"
-                                                            value="frozen" checked>
-                                                        <label class="form-check-label w-75 pe-5 mb-2" for="frozen">
-                                                            <span class="h6">Frozen Product</span>
-                                                        </label>
-                                                        <div class="form-floating form-floating-outline">
-                                                            <input type="number" class="form-control"
-                                                                placeholder="In Celsius" id="temp">
-                                                            <label for="temp">Max. allowed
-                                                                Temperature</label>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Exp Date -->
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" value="expDate"
-                                                            id="expDate" checked>
-                                                        <label class="form-check-label w-75 pe-5 mb-2" for="expDate">
-                                                            <span class="h6">Expiry Date of
-                                                                Product</span>
-                                                        </label>
-                                                        <div class="form-floating form-floating-outline">
-                                                            <input type="date" class="product-date form-control"
-                                                                id="flatpickr-date" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- /Attributes Tab -->
-                                            <!-- Advanced Tab -->
-                                            <div class="tab-pane fade" id="advanced" role="tabpanel">
-                                                <h6 class="text-body">Advanced</h6>
-                                                <div class="row">
-                                                    <!-- Product Id Type -->
-                                                    <div class="col">
-                                                        <h6 class="mb-2">Product ID Type</h6>
-                                                        <div class="form-floating form-floating-outline">
-                                                            <select id="product-id" class="select2 form-select"
-                                                                data-placeholder="ISBN" data-allow-clear="true">
-                                                                <option value="">ISBN</option>
-                                                                <option value="ISBN">ISBN</option>
-                                                                <option value="UPC">UPC</option>
-                                                                <option value="EAN">EAN</option>
-                                                                <option value="JAN">JAN</option>
-                                                            </select>
-                                                            <label for="product-id">Id</label>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Product Id -->
-                                                    <div class="col">
-                                                        <h6 class="mb-2">Product ID</h6>
-                                                        <div class="form-floating form-floating-outline">
-                                                            <input type="number" id="product-id-1" class="form-control"
-                                                                placeholder="ISBN Number" />
-                                                            <label for="product-id-1">Id Number</label>
-                                                        </div>
-                                                    </div>
+                                </div>
+                                <a onclick=" create()" href="javascript:void(0)" class="btn btn-primary"> Thêm biến
+                                    thể</a>
+                            </div>
+                        </div>
+                        <!-- /Variants -->
+                    </div>
+                    <!-- /Second column -->
 
-                                                </div>
-                                            </div>
-                                            <!-- /Advanced Tab -->
+                    <!-- Second column -->
+                    <div class="col-12 col-lg-4">
+                        <!-- Pricing Card -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Giá cả</h5>
+                            </div>
+                            <div class="card-body">
+                                <!-- Base Price -->
+                                <div class="form-floating form-floating-outline mb-4">
+                                    <input type="number" class="form-control" id="ecommerce-product-price"
+                                        placeholder="Giá" name="price_regular" aria-label="Product price" />
+                                    <label for="ecommerce-product-price">Giá tốt nhất</label>
+                                </div>
 
-                                        </div>
+                                <!-- Discounted Price -->
+                                <div class="form-floating form-floating-outline mb-4">
+                                    <input type="number" class="form-control" id="ecommerce-product-discount-price"
+                                        placeholder="Sale" name="price_sale" aria-label="Product discounted price" />
+                                    <label for="ecommerce-product-discount-price">Giá đã giảm</label>
+                                </div>
+                                <!-- Instock switch -->
+                                <div class="d-flex justify-content-between align-items-center border-top pt-3">
+                                    <p class="mb-0">Trong kho</p>
+                                    <div class="w-25 d-flex justify-content-end">
+                                        <label class="switch switch-primary me-4 pe-2">
+                                            <input type="checkbox" class="switch-input" checked="" />
+                                            <span class="switch-toggle-slider">
+                                                <span class="switch-on">
+                                                    <span class="switch-off"></span>
+                                                </span>
+                                            </span>
+                                        </label>
                                     </div>
-                                    <!-- /Options-->
                                 </div>
                             </div>
                         </div>
-                        <!-- /Inventory -->
+                        <!-- /Pricing Card -->
+                        <!-- Organize Card -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Tổ chức</h5>
+                            </div>
+                            <div class="card-body">
+                                <!-- Category -->
+                                <div class="mb-4 col ecommerce-select2-dropdown">
+                                    <div class="form-floating form-floating-outline w-100 me-3">
+                                        <select id="category-org" class="select2 form-select"
+                                            data-placeholder="Chọn danh mục" name="catelogue_id" required>
+                                            <option value="">Chọn danh mục</option>
+                                            @foreach ($catelogues as $item)
+                                                <option value="{{ $item['id'] }}">{{ $item['name'] }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        <label for="category-org">Danh mục</label>
+                                    </div>
+                                </div>
+                                <!-- Status -->
+                                <div class="mb-4 col ecommerce-select2-dropdown">
+                                    <div class="form-floating form-floating-outline">
+                                        <select id="status-org" class="select2 form-select"
+                                            data-placeholder="Chọn trạng thái" name="is_active" required>
+                                            <option value="">Chọn trạng thái</option>
+                                            <option value="1">Đã xuất bản</option>
+                                            <option value="0">Không hoạt động</option>
+                                        </select>
+                                        <label for="status-org">Trạng thái</label>
+                                    </div>
+                                </div>
+                                <!-- Tags -->
+                                {{-- <div class="mb-3">
+                                    <div class="form-floating form-floating-outline">
+                                        <input id="ecommerce-product-tags" class="form-control h-auto"
+                                            name="ecommerce-product-tags" value="Normal,Standard,Premium"
+                                            aria-label="Product Tags" />
+                                        <label for="ecommerce-product-tags">Tags</label>
+                                    </div>
+                                </div> --}}
+                            </div>
+                        </div>
+                        <!-- /Organize Card -->
                     </div>
                     <!-- /Second column -->
                 </div>
+            </form>
         </div>
-        </form>
     </div>
     <!-- / Content -->
+@endsection
+
+@section('style-libs')
+    <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
+@endsection
+@section('script-libs')
+    <script>
+        function create() {
+            let count_items = document.querySelectorAll('.itemst').length - 1;
+            count_items++;
+            $('#multi').append(`
+            <div class="row mb-3 mb-sm-0 itemst">
+                <div class="mb-3 col-sm-4">
+                    <div class="form-floating form-floating-outline">
+                        <select name="variant[${count_items}][colors]" id="select2Basic" class="select2 form-select" data-placeholder="Tùy chọn" data-allow-clear="true" required>
+                             <option value="">Tùy chọn</option>
+                            @foreach ($colors as $color)
+                                {
+                                <option value="{{ $color['id'] }}">{{ $color['name'] }}</option>
+                                }
+                            @endforeach
+                        </select>
+                        <label for="select2Basic">Màu Sắc</label>
+                    </div>
+                </div>
+                 <div class="mb-3 col-sm-4">
+                    <div class="form-floating form-floating-outline">
+                         <input name="variant[${count_items}][quantities]" type="number" id="form-repeater-1-2" class="form-control"
+                                                placeholder="Số Lượng" />
+                        <label for="form-repeater-1-2">Số Lượng</label>
+                    </div>
+                </div>
+                <div class="mb-3 col-sm-4">
+                    <div class="form-floating form-floating-outline">
+                         <input name="variant[${count_items}][variant_images]" type="file" id="form-repeater-1-2" class="form-control" placeholder="Ảnh sản phẩm" />
+                        <label for="form-repeater-1-2">Ảnh sản phẩm</label>
+                     </div>
+                </div>
+            </div>`);
+        }
+    </script>
+    <script>
+        CKEDITOR.replace('content');
+    </script>
+    <script src="/Assets/Admin/js/app-ecommerce-product-add.js"></script>
 @endsection

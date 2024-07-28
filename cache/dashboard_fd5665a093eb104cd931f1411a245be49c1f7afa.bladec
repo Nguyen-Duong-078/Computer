@@ -854,4 +854,12 @@
  <!-- / Content -->
 <?php $this->stopSection(); ?>
 
+<?php $this->startSection('style-libs'); ?>
+ <link rel="stylesheet" href="/Assets/Admin/vendor/css/pages/app-ecommerce-dashboard.css" />
+<?php $this->stopSection(); ?>
+
+<?php $this->startSection('script-libs'); ?>
+ <script src="/Assets/Admin/js/app-ecommerce-dashboard.js"></script>
+<?php $this->stopSection(); ?>
+
 <?php if (isset($_shouldextend[1])) { echo $this->runChild('layouts.master'); } ?>

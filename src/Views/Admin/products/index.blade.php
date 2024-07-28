@@ -1,18 +1,17 @@
 @extends('layouts.master')
 
 @section('title')
-    Products
+    Sản Phẩm | Danh sách
 @endsection
 @section('content')
     <!-- Content -->
 
     <div class="container-xxl flex-grow-1 container-p-y">
         <h4>
-            <span class="text-muted fw-light">Products /</span> Product
-            List
+            <span class="text-muted fw-light">Sản phẩm /</span> Danh sách
         </h4>
         <div class="card-header d-flex justify-content-end align-items-center mb-3">
-            <a class="btn btn-primary" href="catelogues/create"><i class="mdi mdi-plus me-0 me-sm-1"></i>Add Product</a>
+            <a class="btn btn-primary" href="products/create"><i class="mdi mdi-plus me-0 me-sm-1"></i>Thêm mới sản phẩm</a>
         </div>
         <div class="card">
             <div class="card-body">
@@ -30,6 +29,7 @@
                             <th>price_regular</th>
                             <th>price_sale</th>
                             <th>description</th>
+                            <th>content</th>
                             <th>view</th>
                             <th>Active</th>
                             <th>Action</th>
@@ -51,6 +51,7 @@
                                 <td>{{ $item['p_price_regular'] }}</td>
                                 <td>{{ $item['p_price_sale'] }}</td>
                                 <td>{{ $item['p_description'] }}</td>
+                                <td>{!! $item['p_content'] !!}</td>
                                 <td>{{ $item['p_view'] }}</td>
                                 <td>
                                     {!! $item['p_is_active']

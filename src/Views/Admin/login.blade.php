@@ -19,15 +19,15 @@
 </head>
 
 <body>
-    {{-- @if (!@empty($_SESSION['errors']))
+    @if (!@empty($_SESSION['errors']))
         <div class="alert alert-danger" role="alert">
             <ul>
                 @foreach ($_SESSION['errors'] as $key => $error)
-                    <li>Key: {{ $key }} - error: {{ $error }}</li>
+                    <li>{{ $error }}.</li>
                 @endforeach
             </ul>
         </div>
-    @endif --}}
+    @endif
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100">
@@ -48,7 +48,8 @@
                     <form action="#">
                         <div class="wrap-input100 validate-input">
                             <input class="input100" type="email" name="email" id="email"
-                                placeholder="Tài khoản quản trị">
+                                placeholder="Tài khoản quản trị" value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email'], ENT_QUOTES) : ''; ?>">
+
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
                                 <i class='bx bx-user'></i>

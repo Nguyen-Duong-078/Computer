@@ -79,11 +79,6 @@
                         <div data-i18n="Danh sách sản phẩm">Danh sách sản phẩm</div>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="/admin/products/variants" class="menu-link">
-                        <div data-i18n="Variants">Variants</div>
-                    </a>
-                </li>
             </ul>
         </li>
 

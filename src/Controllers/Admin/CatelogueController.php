@@ -113,7 +113,7 @@ class CatelogueController extends Controller
     {
         $catelogues = $this->catelogue->getByID($id);
 
-        if (empty($data['catelogues'])) {
+        if (!empty($data['catelogues'])) {
             Error_404();
         }
         $this->catelogue->deleteByID($id);

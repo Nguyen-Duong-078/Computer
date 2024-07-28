@@ -853,3 +853,11 @@
     </div>
     <!-- / Content -->
 @endsection
+
+@section('style-libs')
+    <link rel="stylesheet" href="/Assets/Admin/vendor/css/pages/app-ecommerce-dashboard.css" />
+@endsection
+
+@section('script-libs')
+    <script src="/Assets/Admin/js/app-ecommerce-dashboard.js"></script>
+@endsection

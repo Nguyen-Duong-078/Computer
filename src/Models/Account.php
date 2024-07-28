@@ -111,7 +111,7 @@ class Account extends Model
     public function getByEmailAndPassword($email, $password)
     {
         try {
-            $sql = "SELECT * FROM users WHERE email = :email AND password = :password";
+            $sql = "SELECT * FROM users WHERE email = :email AND password = :password AND role = 'Admin' ";
             $stmt = $this->conn->prepare($sql);
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':password', $password);

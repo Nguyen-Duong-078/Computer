@@ -1,15 +1,11 @@
 @extends('layouts.master')
 
 @section('title')
-    {{ $products['p_name'] }}
+    Sản phẩm | {{ $products['p_name'] }}
 @endsection
 @section('content')
     <!-- Content -->
-
     <div class="container-xxl flex-grow-1 container-p-y">
-
-
-
         <h4 class="py-3 mb-4">
             <span class="text-muted fw-light">Products /</span><span> Show Product</span>
         </h4>

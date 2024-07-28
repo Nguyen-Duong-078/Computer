@@ -1,18 +1,17 @@
 @extends('layouts.master')
 
 @section('title')
-    Catelogues
+    Quản lý danh mục
 @endsection
 @section('content')
     <!-- Content -->
 
     <div class="container-xxl flex-grow-1 container-p-y">
         <h4>
-            <span class="text-muted fw-light">Catelogues /</span> Catelogue
-            List
+            <span class="text-muted fw-light">Quản lý danh mục /</span> Danh sách danh mục
         </h4>
         <div class="card-header d-flex justify-content-end align-items-center mb-3">
-            <a class="btn btn-primary" href="catelogues/create"><i class="mdi mdi-plus me-0 me-sm-1"></i>Add Catelogue</a>
+            <a class="btn btn-primary" href="catelogues/create"><i class="mdi mdi-plus me-0 me-sm-1"></i>Thêm mới</a>
         </div>
         <div class="card">
             <div class="card-body">

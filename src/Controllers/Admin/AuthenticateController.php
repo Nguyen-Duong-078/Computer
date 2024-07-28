@@ -13,25 +13,35 @@ class AuthenticateController extends Controller
             $email = $_POST['email'];
             $password = $_POST['password'];
 
-            if (empty($email) || filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $_SESSION['errors'] = 'Email không được để trống và đúng định dạng';
+            if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $_SESSION['errors'][] = 'Email không được để trống và phải đúng định dạng';
             }
+
             if (empty($password)) {
-                $_SESSION['errors'] = 'Mật khẩu không được để trống';
+                $_SESSION['errors'][] = 'Mật khẩu không được để trống';
             }
 
-            $user = (new Account)->getByEmailAndPassword($_POST['email'], $_POST['password']);
+            if (empty($_SESSION['errors'])) {
+                $account = new Account();
+                $user = $account->getByEmailAndPassword($email, $password);
 
-            if (empty($user)) {
-                $_SESSION['errors'] = 'Không tìm thấy người dùng!';
-            } else {
-                $_SESSION['user'] = $user;
-                header('Location: /admin/');
-                exit();
+                if (empty($user)) {
+                    $_SESSION['errors'][] = 'Email hoặc mật khẩu không đúng';
+                } else
+                    if ($user['role'] !== 'Admin') {
+                        $_SESSION['errors'][] = 'Bạn không phải người quản trị';
+                    } else {
+                        $_SESSION['user'] = $user;
+                        header('Location: /admin/');
+                        exit();
+                    }
             }
         }
         return $this->renderViewAdmin(__FUNCTION__);
     }
+
+
+
 
     public function logout()
     {

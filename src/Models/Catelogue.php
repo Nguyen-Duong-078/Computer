@@ -54,18 +54,18 @@ class Catelogue extends Model
                $id = $this->createid($name);
                $sql = "INSERT INTO 
                catelogues (name,
-                           id,
+                           slug,
                            is_active,
                            image) 
                VALUES (:name,
-                       :id,
+                       :slug,
                        :is_active,
                        :image)";
 
                $stmt = $this->conn->prepare($sql);
 
                $stmt->bindParam(':name', $name);
-               $stmt->bindParam(':id', $id);
+               $stmt->bindParam(':slug', $id);
                $stmt->bindParam(':is_active', $is_active);
                $stmt->bindParam(':image', $image);
 
